@@ -6,6 +6,7 @@
 export const createOneSecondPromise = () => {
   // Return a Promise that resolves to the string 'The PROMISE was RESOLVED' in 1 second
   // make sure to use the promise constructor described in The Markdown For this exercise
+  test
 };
 
 export const logMessageAfterOneSecond = (message) => {
