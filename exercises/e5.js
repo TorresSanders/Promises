@@ -8,8 +8,12 @@
  *          export const Promise
  */
 
-export const attachTitle = () => {
-  // Your code goes here...
+export const attachTitle = (arg) => {
+  if (typeof arg === "string") {
+    return "DR. " + arg;
+  } else {
+    throw new Error("invalid input.");
+  }
 };
 
 /**
@@ -21,7 +25,12 @@ export const attachTitle = () => {
  */
 
 export const getPromise = () => {
-  // Your code goes here...
+  return Promise.resolve("MANHATTAN")
+    .then((result) => attachTitle(result))
+    .then((resultWithTitle) => {
+      console.log(resultWithTitle);
+      return resultWithTitle;
+    });
 };
 
 // === TEST YOURSELF ===

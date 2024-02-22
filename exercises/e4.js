@@ -12,7 +12,13 @@ const first = () => Promise.resolve(3);
 const second = (val) => {
   return Promise.resolve(val + 7);
 };
-
+// first()
+//   .then((result) => {
+//     return second(result);
+//   })
+//   .then((finalResult) => {
+//     return finalResult;
+//   });
 /**
  * @task
  * The following code resolves both promises using intermediate variables to store every next promise
@@ -21,13 +27,12 @@ const second = (val) => {
  */
 
 // Refactor the following code...
-export const handlePromise = first();
-const secondPromise = handlePromise.then((val) => val);
-const final = secondPromise.then((res) => second(res));
-final.then((val) => {
-  console.log(val);
-  return val;
-});
+export const handlePromise = first()
+  .then((res) => second(res))
+  .then((val) => {
+    console.log(val);
+    return val;
+  });
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-4"

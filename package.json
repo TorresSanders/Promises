@@ -6,6 +6,7 @@
   "directories": {
     "test": "test"
   },
+  "type": "module", 
   "scripts": {
     "test-all": "vitest --run",
     "test-1": "vitest --run e1.",
@@ -26,7 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.17.3",
-    "node-fetch": "^3.3.1",
+    "node-fetch": "^3.3.2",
     "vitest": "^0.29.7"
   },
   "devDependencies": {
