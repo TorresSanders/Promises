@@ -7,9 +7,8 @@ export const getFirstPromiseOrFail = (promises) => {
 };
 
 export const getQuantityOfRejectedPromises = (promises) => {
-  let count = 0;
-  return Promise.all(promises.map((p) => p.catch(() => count++))).then(
-    () => count
+  return Promise.allSettled(promises).then(
+    (results) => results.filter((result) => result.status === "rejected").length
   );
 };
 

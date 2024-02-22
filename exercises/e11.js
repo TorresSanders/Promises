@@ -37,7 +37,7 @@ const getLoginList = (data) => {
  * example: const getData = <node_fetch_function_call>
  */
 // const fetch = require("node-fetch");
-import fetch from "node-fetch";
+
 const getData = fetch(usersUrl);
 
 /**

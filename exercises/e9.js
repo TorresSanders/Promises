@@ -12,9 +12,7 @@
 
 export function iterate(arg) {
   console.log(arg);
-  if (Number.isInteger(arg)) {
-    return arg + 1;
-  }
+  return arg + 1;
 }
 
 /**
@@ -37,11 +35,8 @@ export function alwaysThrows() {
  */
 
 export function onReject(arg) {
-  if (arg instanceof Error) {
-    console.log(arg.message);
-  } else {
-    console.log(arg);
-  }
+  const value = arg instanceof Error ? arg.message : arg;
+  console.log(value);
 }
 
 /**
